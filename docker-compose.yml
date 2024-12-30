@@ -1,0 +1,21 @@
+services:
+  api:
+    environment:
+      # required to directly print() towards stdout - activates flush always
+      PYTHONUNBUFFERED: 1
+    networks:
+      openhab_mac_net:
+        ipv4_address: 10.10.10.235
+    ports:
+      - 9000:9000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # flask requires SIGINT to stop gracefully
+    # (default stop signal from Compose is SIGTERM)
+    stop_signal: SIGINT
+
+networks:
+  openhab_mac_net:
+    name: mac-vlan
+    external: true
