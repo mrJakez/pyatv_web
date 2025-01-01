@@ -1,4 +1,3 @@
-import sys
 import os
 import time
 from fastapi import FastAPI, Request, HTTPException
@@ -13,9 +12,7 @@ from pyatv.storage.file_storage import FileStorage
 os.environ['TZ'] = 'Europe/Berlin'
 time.tzset()
 
-app = FastAPI(
-    title="vestaboard-control",
-    description="foobar")
+app = FastAPI()
 
 
 async def get_atv(givenId):
