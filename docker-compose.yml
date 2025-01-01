@@ -14,6 +14,8 @@ services:
     # flask requires SIGINT to stop gracefully
     # (default stop signal from Compose is SIGTERM)
     stop_signal: SIGINT
+    volumes:
+      - ./config/.pyatv.conf:/app/.pyatv.conf
 
 networks:
   openhab_mac_net:
