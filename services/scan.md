@@ -16,8 +16,7 @@ Get details for all AppleTV devices within the same network.
 
 **Content examples**
 
-For a User with ID 1234 on the local database where that User has saved an
-email address and name information.
+This is a regular example for a scan within a home network:
 
 ```json
 {
